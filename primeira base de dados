@@ -33,7 +33,6 @@ CREATE TABLE endereco (
 */ Em relacionamentos 1 x n a chave estrangeira fica na tabela n*/
 
 */ Inserindo relacionamentos
-
 INSERT INTO cliente VALUES (NULL,'JOAO','M','JOAO@IG.COM','98547-6');
 INSERT INTO cliente VALUES (NULL,'CARLOS','M','CARLOS@TERRA.COM','86664-7');
 INSERT INTO cliente VALUES (NULL,'ANA','F','ANA@GLOBO.COM','75658-5');
@@ -45,3 +44,11 @@ INSERT INTO cliente VALUES (NULL,'CELIA','F','CELIA@TERRA.COM','77558-5');
 desc endereco;
 desc cliente;
 desc telefone;
+
+*/ inserindo endereco */
+INSERT INTO endereco VALUES (NULL,'RJ','Rio de Janeiro','Rua A','Bairro 1',2);
+INSERT INTO endereco VALUES (NULL,'ES','Vitória','Rua B','Bairro 2',4);
+INSERT INTO endereco VALUES (NULL,'SP','São Paulo','Rua C','Bairro 3',3);
+INSERT INTO endereco VALUES (NULL,'RJ','Campos','Rua D','Bairro 4',6);
+INSERT INTO endereco VALUES (NULL,'SP','Riberão Preto','Rua E','Bairro 5',5);
+INSERT INTO endereco VALUES (NULL,'ES','Vila Velha','Rua F','Bairro 6',7);
