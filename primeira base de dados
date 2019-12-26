@@ -1,0 +1,47 @@
+/* criando a tabela clientes com a chave primária */
+CREATE TABLE cliente (
+  idcliente INT PRIMARY KEY AUTO_INCREMENT,
+	nome VARCHAR (30) NOT NULL,
+	sexo ENUM ('M','F') NOT NULL,
+  email VARCHAR (30) UNIQUE,
+	cpf CHAR (12) UNIQUE
+);
+
+/* criando a tabela telefone com a chave primária e a estrangeira */
+CREATE TABLE telefone ( 
+	idtelefone INT PRIMARY KEY AUTO_INCREMENT, 
+	tipo ENUM ('Celular','Fixo','Comercial'), 
+	numero CHAR (11), 
+	client_id INT 
+	FOREIGN KEY (client_id) 
+	REFERENCES cliente(idcliente) 
+);
+
+/* criando a tabela endereço com a chave priária e estrangeira */
+CREATE TABLE endereco (
+	idendereco INT PRIMARY KEY AUTO_INCREMENT,
+	estado CHAR (2) NOT NULL,
+	cidade VARCHAR (30) NOT NULL,
+	rua VARCHAR (30) NOT NULL ,
+	bairro VARCHAR (30) NOT NULL,
+	cliente_id INT,
+	FOREIGN KEY (cliente_id)
+	REFERENCES cliente (idcliente)
+);
+
+*/ Em relacionamentos 1 x 1 a chave estrangeira fica na tabela mais fraca */
+*/ Em relacionamentos 1 x n a chave estrangeira fica na tabela n*/
+
+*/ Inserindo relacionamentos
+
+INSERT INTO cliente VALUES (NULL,'JOAO','M','JOAO@IG.COM','98547-6');
+INSERT INTO cliente VALUES (NULL,'CARLOS','M','CARLOS@TERRA.COM','86664-7');
+INSERT INTO cliente VALUES (NULL,'ANA','F','ANA@GLOBO.COM','75658-5');
+INSERT INTO cliente VALUES (NULL,'JORGE','M','JORGE@GMAIL.COM','88657-5');
+INSERT INTO cliente VALUES (NULL,'CLARA','F','CLARA@GMAIL.COM','99754-7');
+INSERT INTO cliente VALUES (NULL,'CELIA','F','CELIA@TERRA.COM','77558-5');
+
+*/ Descrevendo as tabelas */
+desc endereco;
+desc cliente;
+desc telefone;
